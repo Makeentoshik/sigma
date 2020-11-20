@@ -1,19 +1,16 @@
 <template>
-  <transition name="modal">
     <div class="modal__wrapper" @click="$emit('close')">
       <div class="modal-content" @click.stop="">
-
         <div class="modal-header">
           <span class="modal-title"> {{ title }} </span>
           <span class="button-close" @click="$emit('close')">×</span>
-         </div>
-
-         <div class="modal-body">
-            <slot name="body">Default Body</slot>
-          </div>
+        </div>
+        <div class="modal-body">
+          <slot name="body">Default body</slot>
+        </div>
+        
       </div>
     </div>
-  </transition>
 </template>
 
 <script>
@@ -24,24 +21,18 @@ export default {
       required: true
     }
   },
-  mounted() {
+  mounted () {
     document.body.addEventListener('keyup', e => {
-      if (e.keyCode === 27) this.$emit('close')
+  if (e.keyCode === 27) this.$emit('close')
     })
   },
   computed: {},
-  methods: {}
+ methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-.modal-enter-active, .modal-leave-active {
-  opacity: 0;
-}
-.modal-enter-active .modal-content, 
-.modal-leave-active .modal-content {
-  transform: scale(1.2);
-}
+
 .modal__wrapper{
   display: flex;
   justify-content: center;
@@ -55,6 +46,7 @@ export default {
   z-index: 998;
   background-color: rgba(00,00,00,.48);
 }
+
 .modal-content {
   position: relative;
   max-width: 600px;
@@ -84,4 +76,7 @@ export default {
 .modal-body {
   text-align: center;
 }
+
+
+
 </style>
