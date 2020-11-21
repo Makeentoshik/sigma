@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Изучение Vue.js</title>
+   
+</head>
+<body>
+   <script src="https://unpkg.com/vue"></script>
+   
+
+   <div id="app">
+       <button v-on:click="show = !show"> Скрыть / Показать</button>
+ <p v-if="show">Текст, который может стать невидимым</p> 
+      
+   </div>
+   <script src="js/main.js"></script>
+</body>
+</html>
