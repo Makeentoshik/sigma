@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    
     <title>Изучение Vue.js</title>
    
 </head>
@@ -14,7 +14,10 @@
    <div id="app">
        <button v-on:click="show = !show"> Скрыть / Показать</button>
  <p v-if="show">Текст, который может стать невидимым</p> 
-      
+ <p v-else>Текст 2</p> 
+      <ul>
+          <li v-for="(car, i) in cars">{{i+1}} - {{ car.model }}, скорость: {{ car.speed}}</li>
+      </ul>
    </div>
    <script src="js/main.js"></script>
 </body>
